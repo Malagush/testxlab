@@ -1,3 +1,4 @@
+//харкод новости 1
 export const TextToNewHtml = () => {
   return (
     <div>

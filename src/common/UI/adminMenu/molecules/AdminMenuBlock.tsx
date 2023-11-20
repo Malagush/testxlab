@@ -21,26 +21,30 @@ export interface IAdminMoreItem {
   children?: IAdminMoreItem[];
 }
 
+//левое меню
 export const AdminMenuBlock = () => {
+  //для успешной роутеризации
   const navigate = useNavigate();
+  //чтобы позже проверить где находимся
   const location = useLocation();
 
   const [visibleSetting, setVisibleSetting] = useState(false);
   const [visibleMobileMenu, setVisibleMobileMenu] = useState(false);
 
+  //харкодим меню
   const menuItems: IAdminMoreItem[] = [
     { logo: homeLogo, name: "Главная", url: "/" },
     { logo: searchLogo, name: "Поиск адресов", url: "/address" },
-    { logo: tablesLogo, name: "Таблицы", url: "" },
+    { logo: tablesLogo, name: "Таблицы", url: "/tables" },
     { logo: calendaryLogo, name: "Календарь", url: "" },
-    { logo: mapLogo, name: "Карты", url: "" },
+    { logo: mapLogo, name: "Карты", url: "/maps" },
     { logo: wigetsLogo, name: "Виджеты", url: "" },
     {
       logo: settingLogo,
       name: "Настройки",
       url: "",
       children: [
-        { logo: settingPersonLogo, name: "Настройки профиля", url: "" },
+        { logo: settingPersonLogo, name: "Настройки профиля", url: "/userset" },
         { logo: settingMoneyLogo, name: "Управление финансами", url: "" },
       ],
     },
@@ -94,7 +98,15 @@ export const AdminMenuBlock = () => {
               {item.children &&
                 visibleSetting &&
                 item.children.map((itemChild: IAdminMoreItem, i: number) => (
-                  <div className="AdminMenuBlock-item AdminMenuBlock-items-children">
+                  <div
+                    className="AdminMenuBlock-item AdminMenuBlock-items-children"
+                    onClick={() => {
+                      itemChild.children
+                        ? setVisibleSetting(!visibleSetting)
+                        : itemChild.url &&
+                          (navigate(itemChild.url), setVisibleMobileMenu(false));
+                    }}
+                  >
                     <div className="AdminMenuBlock-item-textAndImg">
                       <img src={itemChild.logo}></img>
                       <div key={i} className="AdminMenuBlock-item-text">

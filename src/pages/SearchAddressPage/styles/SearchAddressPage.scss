@@ -1,0 +1,127 @@
+$font-M: Montserrat;
+$color-black: #1c1c1e;
+$color-grey: #6c6c6c;
+
+.SearchAddressPage {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchAddressPage-Header {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+}
+.SearchAddressPage-Header-Address {
+  color: $color-black;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: $font-M;
+}
+
+.SearchAddressPage-Header-AddressName {
+  color: $color-black;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-family: $font-M;
+}
+
+.SearchAddressPage-InputButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 74vw;
+  justify-content: center;
+}
+.SearchAddressPage-Input {
+  width: 70%;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 3px solid #4f27bf;
+  background: #fff;
+  color: $color-grey;
+  font-family: $font-M;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.SearchAddressPage-Button {
+  width: 200px;
+  height: 75px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #4f27bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.SearchAddressPage-item-text {
+  color: #fff;
+  font-family: $font-M;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.SearchAddressPage-table {
+  display: flex;
+  width: 92%;
+  height: 59vh;
+  overflow-y: scroll;
+  padding: 24px 24px 39px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  // gap: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(2, 0, 97, 0.25);
+}
+
+.SearchAddressPage-table-header {
+  width: 100%;
+  min-height: 40px;
+  color: #000;
+  font-family: $font-M;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-bottom: 1px solid #d7d7d7;
+}
+.SearchAddressPage-table-text {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  font-family: $font-M;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 20px 0px 20px 0px;
+}
+
+@media screen and (orientation: portrait) {
+  .SearchAddressPage-Input {
+    width: 100%;
+  }
+  .SearchAddressPage-table {
+    width: 74%;
+    height: 40vh;
+  }
+  .SearchAddressPage-table-text {
+    // min-height: 100px;
+  }
+}

@@ -4,7 +4,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/AdminMore.css";
 
-//В этом компоненте есть изменение внешней логики роутов
 //Родительский компонент всех страниц
 export const AdminMore = () => {
   const location = useLocation();
@@ -15,6 +14,7 @@ export const AdminMore = () => {
       <div className="content">
         <Outlet />
       </div>
+      {/* Тут мог быть футтер */}
     </div>
   );
 };
