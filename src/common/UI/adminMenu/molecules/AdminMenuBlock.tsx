@@ -12,7 +12,7 @@ import exitLogo from "../../../../assets/images/icons/exit.svg";
 import menuLevel from "../../../../assets/images/icons/menulevel.svg";
 import burger from "../../../../assets/images/icons/burger.svg";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export interface IAdminMoreItem {
   logo: string;
@@ -23,7 +23,7 @@ export interface IAdminMoreItem {
 
 export const AdminMenuBlock = () => {
   const navigate = useNavigate();
-  // const location = useLocation();
+  const location = useLocation();
 
   const [visibleSetting, setVisibleSetting] = useState(false);
   const [visibleMobileMenu, setVisibleMobileMenu] = useState(false);
@@ -65,7 +65,7 @@ export const AdminMenuBlock = () => {
           {menuItems.map((item: IAdminMoreItem, i: number) => (
             <div className="AdminMenuBlock-itemfull">
               <div
-                className="AdminMenuBlock-item"
+                className="AdminMenuBlock-item "
                 onClick={() => {
                   item.children
                     ? setVisibleSetting(!visibleSetting)
@@ -73,9 +73,11 @@ export const AdminMenuBlock = () => {
                       (navigate(item.url), setVisibleMobileMenu(false));
                 }}
               >
-                <img src={item.logo}></img>
-                <div key={i} className="AdminMenuBlock-item-text">
-                  {item.name}
+                <div className="AdminMenuBlock-item-textAndImg">
+                  <img src={item.logo}></img>
+                  <div key={i} className="AdminMenuBlock-item-text">
+                    {item.name}
+                  </div>
                 </div>
                 {item.children && (
                   <img
@@ -85,14 +87,19 @@ export const AdminMenuBlock = () => {
                     src={menuLevel}
                   ></img>
                 )}
+                {location.pathname === item.url && (
+                  <div className="AdminMenuBlock-item-active"></div>
+                )}
               </div>
               {item.children &&
                 visibleSetting &&
                 item.children.map((itemChild: IAdminMoreItem, i: number) => (
                   <div className="AdminMenuBlock-item AdminMenuBlock-items-children">
-                    <img src={itemChild.logo}></img>
-                    <div key={i} className="AdminMenuBlock-item-text">
-                      {itemChild.name}
+                    <div className="AdminMenuBlock-item-textAndImg">
+                      <img src={itemChild.logo}></img>
+                      <div key={i} className="AdminMenuBlock-item-text">
+                        {itemChild.name}
+                      </div>
                     </div>
                   </div>
                 ))}

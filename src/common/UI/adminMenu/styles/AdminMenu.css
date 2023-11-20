@@ -3,7 +3,10 @@
   align-items: flex-start;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 20px;
+}
+
+.contentPage {
+  padding: 30px 0px 0px 15px;
 }
 
 @media screen and (orientation: portrait) {

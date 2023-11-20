@@ -1,8 +1,10 @@
 .AdminMenuBlock {
   width: 300px;
   flex-shrink: 0;
-  padding: 15px;
+  padding: 15px 0px 15px 15px;
   opacity: 1;
+  height: 85vh;
+  overflow-y: auto;
 }
 
 .AdminMenuBlock-header {
@@ -16,18 +18,33 @@
 .AdminMenuBlock-items {
 }
 
-.AdminMenuBlock--itemfull {
+.AdminMenuBlock-itemfull {
   display: flex;
   flex-direction: column;
+}
+
+.AdminMenuBlock-item-active {
+  width: 4px;
+  height: 37px;
+  flex-shrink: 0;
+  border-radius: 5px 0px 0px 5px;
+  background: #4f27bf;
 }
 
 .AdminMenuBlock-item {
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 10px;
-  padding: 15px;
+  padding: 15px 5px 15px 15px;
   cursor: pointer;
+  justify-content: space-between;
+}
+
+.AdminMenuBlock-item-textAndImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .AdminMenuBlock-item-text {

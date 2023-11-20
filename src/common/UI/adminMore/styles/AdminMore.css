@@ -1,15 +1,16 @@
 .AdminMore {
-  min-width: 100vw;
-  min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background: #fff;
   color: #1c1c1e;
   font-family: Montserrat;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-  top: 80px;
+  height: 90vh;
   position: relative;
   z-index: 0;
 }

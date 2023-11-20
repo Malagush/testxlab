@@ -1,0 +1,33 @@
+.NewsPage {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.NewsPage-NewsText {
+  white-space: pre-wrap;
+  overflow-y: scroll;
+  height: 75vh;
+}
+
+.NewsPage-Header {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+}
+.NewsPage-Header-News {
+  color: var(--Text, #1c1c1e);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.NewsPage-Header-NewsName {
+  color: var(--Text, #1c1c1e);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

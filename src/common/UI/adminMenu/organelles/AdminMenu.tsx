@@ -6,7 +6,7 @@ export const AdminMenu = () => {
   return (
     <div className="AdminMenu">
       <AdminMenuBlock />
-      <div className="">
+      <div className="contentPage">
         <Outlet />
       </div>
     </div>
