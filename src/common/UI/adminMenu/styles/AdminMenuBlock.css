@@ -1,0 +1,70 @@
+.AdminMenuBlock {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 15px;
+  opacity: 1;
+}
+
+.AdminMenuBlock-header {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-left: 15px;
+}
+
+.AdminMenuBlock-items {
+}
+
+.AdminMenuBlock--itemfull {
+  display: flex;
+  flex-direction: column;
+}
+
+.AdminMenuBlock-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.AdminMenuBlock-item-text {
+  color: var(--Text, #1c1c1e);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.AdminMenuBlock-items-children {
+  padding-left: 80px;
+}
+
+.AdminMenuBlock-item-children {
+}
+
+.AdminMenuBlock-burger {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  .AdminMenuBlock-burger {
+    display: block;
+    width: 30px;
+    padding: 10px;
+  }
+  .AdminMenuBlock {
+    opacity: 0;
+    display: none;
+  }
+  .AdminMenuBlock-visible {
+    opacity: 1;
+    display: block;
+    position: absolute;
+    margin-left: 40px;
+    background: #fff;
+  }
+}

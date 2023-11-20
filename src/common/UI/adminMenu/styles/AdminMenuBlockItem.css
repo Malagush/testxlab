@@ -1,0 +1,4 @@
+.AdminMenuBlockItem {
+  display: flex;
+  flex-direction: column;
+}
