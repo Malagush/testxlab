@@ -67,7 +67,7 @@ export const AdminMenuBlock = () => {
         <div className="AdminMenuBlock-header">Меню</div>
         <div className="AdminMenuBlock-items">
           {menuItems.map((item: IAdminMoreItem, i: number) => (
-            <div className="AdminMenuBlock-itemfull">
+            <div key={i} className="AdminMenuBlock-itemfull">
               <div
                 className="AdminMenuBlock-item "
                 onClick={() => {
@@ -104,7 +104,8 @@ export const AdminMenuBlock = () => {
                       itemChild.children
                         ? setVisibleSetting(!visibleSetting)
                         : itemChild.url &&
-                          (navigate(itemChild.url), setVisibleMobileMenu(false));
+                          (navigate(itemChild.url),
+                          setVisibleMobileMenu(false));
                     }}
                   >
                     <div className="AdminMenuBlock-item-textAndImg">
